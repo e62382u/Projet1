@@ -4,8 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Secretaire.css";
 
 
-// Initialisation du socket
-const socket = io("http://localhost:5000", { autoConnect: false });
+const NGROK_ADDRESS = ""  // mettre address ngrok ici 
+
+// Initialisation unique du socket
+const socket = io(NGROK_ADDRESS ?? "http://localhost:5000");
 
 function Secretaire({ onLogout }) {
   const [inputMessage, setInputMessage] = useState("");
