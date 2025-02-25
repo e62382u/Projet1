@@ -3,8 +3,10 @@ import { io } from "socket.io-client";
 import logo from "./logo.png";
 import "./Etudiant.css";
 
+const NGROK_ADDRESS = ""  // mettre address ngrok ici 
+
 // Initialisation unique du socket
-const socket = io("http://localhost:5000");
+const socket = io(NGROK_ADDRESS ?? "http://localhost:5000");
 
 function Etudiant() {
   const [message, setMessage] = useState("Attendez"); // Message par défaut
